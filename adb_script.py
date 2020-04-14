@@ -7,6 +7,8 @@ class ADB:
         # Default is "127.0.0.1" and 5037
         self.client = AdbClient(host="127.0.0.1", port=5037)
         self.device = self.client.device("emulator-5554")
+        # if not connect to adb server
+        # type `./adb start-server` after `./emulator -avd Pixel_XL_API_23`
         self.package_name = None
 
     def install_apk(self, apk_filepath):

@@ -14,8 +14,8 @@ adb_shell.install_apk(apk_filepath)
 # start run apk
 adb_shell.start_apk(apkinfo.package_name, apkinfo.main_activity)
 
-time.sleep(2)
+#time.sleep(2)
 
-adb_shell.clean()
+#adb_shell.clean()
 
 # adb_shell.init_frida()
