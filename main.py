@@ -1,21 +1,27 @@
-from apkinfo import Apkinfo
-from adb_script import ADB
-import time
 import sys
+import time
 
-apk_filepath = sys.argv[1]
+from apkinfo import Apkinfo
+from emulator import Emulator
 
-apkinfo = Apkinfo(apk_filepath)
-adb_shell = ADB()
+if len(sys.argv) == 2:
+    # Start the Emulator
+    adb_shell = Emulator.start_emulator()
 
-# install
-adb_shell.install_apk(apk_filepath)
+    apk_filepath = sys.argv[1]
+    apkinfo = Apkinfo(apk_filepath)
 
-# start run apk
-adb_shell.start_apk(apkinfo.package_name, apkinfo.main_activity)
+    # install
+    adb_shell.install_apk(apk_filepath)
 
-#time.sleep(2)
+    # start run apk
+    adb_shell.start_apk(apkinfo.package_name, apkinfo.main_activity)
 
-#adb_shell.clean()
+    time.sleep(10)
 
-# adb_shell.init_frida()
+    adb_shell.clean()
+
+    Emulator.shutdown_emulator()
+
+else:
+    print("Usage: python main.py test.apk")
