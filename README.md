@@ -32,3 +32,5 @@ python main.py test.apk
 ```
 
 ## [Video Demo](https://www.youtube.com/watch?v=0FWliRuwiso)
+
+![](https://i.imgur.com/hWjkNbt.gif)
