@@ -17,11 +17,11 @@ if len(sys.argv) == 2:
     # start run apk
     adb_shell.start_apk(apkinfo.package_name, apkinfo.main_activity)
 
-    time.sleep(10)
+#    time.sleep(10)
 
-    adb_shell.clean()
+#    adb_shell.clean()
 
-    Emulator.shutdown_emulator()
+#    Emulator.shutdown_emulator()
 
 else:
     print("Usage: python main.py test.apk")

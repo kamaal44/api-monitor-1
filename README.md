@@ -15,7 +15,7 @@ pipenv shell
 ```
 
 
-## export adb to your work path
+## export adb to your work path, and start the adb server.
 
 ```bash=
 source .bash_profile 
