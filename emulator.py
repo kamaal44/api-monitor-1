@@ -11,8 +11,11 @@ class Emulator:
     @classmethod
     def start_emulator(cls):
         print("Start the emulator")
+        name = subprocess.check_output(['/Users/nick/Library/Android/sdk/emulator/emulator', '-list-avds'])
+        name_of_emulator = name.decode("utf-8").rstrip("\n")
+
         # put your emulator bin to here.
-        subprocess.Popen(['/Users/Nick/Library/Android/sdk/emulator/emulator', '-avd', 'Pixel_XL_API_23'])
+        subprocess.Popen(['/Users/nick/Library/Android/sdk/emulator/emulator', '-avd', name_of_emulator])
         # wait for emulator
         time.sleep(20)
         print("Init ADB server")
@@ -31,6 +34,6 @@ class Emulator:
 if __name__ == '__main__':
     pass
 
-# shell = Emulator.start_emulator()
+    #shell = Emulator.start_emulator()
 
-# shell.list_all_package()
+    #shell.list_all_package()
