@@ -1,4 +1,5 @@
 import sys
+import codecs
 
 import frida
 
@@ -8,40 +9,14 @@ def on_message(message, data):
         print("[*] {0}".format(message['payload']))
 
 
-jscode = """
-
-Java.perform(function() {
-   var main = Java.use("com.example.testfrida.MainActivity");
-  
-  
-   main.hello_a.implementation = function() {
-     send("call hello_a");
-     return this.getRunningAppProcesses.apply(this, arguments);
-   };
-  
-   main.hello_b.implementation = function() {
-     send("call hello_b");
-     return this.getRunningAppProcesses.apply(this, arguments);
-   };
-  
-   main.hello_c.implementation = function() {
-     send("call hello_c");
-     return this.getRunningAppProcesses.apply(this, arguments);
-   };
-
-
-
-
-
-});
-
-"""
-
 dev = frida.get_remote_device()
 
-session = dev.attach("com.example.testfrida")
+session = dev.attach("com.example.myapplication")
 
-script = session.create_script(jscode)
+with codecs.open('scripts/test.js', 'r', 'utf-8') as f:
+    source = f.read()
+
+script = session.create_script(source)
 
 script.on('message', on_message)
 
