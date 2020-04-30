@@ -34,6 +34,6 @@ class Emulator:
 if __name__ == '__main__':
     pass
 
-    #shell = Emulator.start_emulator()
+    # shell = Emulator.start_emulator()
 
-    #shell.list_all_package()
+    # shell.list_all_package()
