@@ -6,7 +6,7 @@ import frida
 
 def on_message(message, data):
     if message['type'] == 'send':
-        print("[*] {0}".format(message['payload']))
+        print("[*] {}".format(message['payload']))
 
 
 dev = frida.get_remote_device()

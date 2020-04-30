@@ -18,7 +18,7 @@ pipenv shell
 ## export adb to your work path, and start the adb server.
 
 ```bash=
-source .bash_profile 
+source .bash_profile
 ```
 
 Make sure you have already install the Android sdk and the emulator set up.

@@ -9,6 +9,7 @@ verify_ssl = true
 frida-tools = "*"
 pure-python-adb = "*"
 androguard = {editable = true,git = "https://github.com/androguard/androguard.git"}
+pre-commit = "*"
 
 [requires]
 python_version = "3.7"
