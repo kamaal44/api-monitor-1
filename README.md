@@ -4,9 +4,9 @@
 ## Install
 
 ```bash=
-git clone https://github.com/krnick/android-sandbox-autorun.git
+git clone https://github.com/krnick/api-monitor
 
-cd android-sandbox-autorun
+cd api-monitor
 
 pipenv install --skip-lock
 
@@ -16,6 +16,10 @@ pipenv shell
 
 
 ## export adb to your work path, and start the adb server.
+
+```bash=
+source start-emulator.sh
+```
 
 ```bash=
 source .bash_profile
