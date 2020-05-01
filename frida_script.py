@@ -1,5 +1,5 @@
-import sys
 import codecs
+import sys
 
 import frida
 
@@ -13,7 +13,7 @@ dev = frida.get_remote_device()
 
 session = dev.attach("com.example.myapplication")
 
-with codecs.open('scripts/api_monitor.js', 'r', 'utf-8') as f:
+with codecs.open('frida_scripts/api_monitor.js', 'r', 'utf-8') as f:
     source = f.read()
 
 script = session.create_script(source)

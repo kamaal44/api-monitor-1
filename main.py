@@ -1,8 +1,8 @@
 import sys
 import time
 
-from apkinfo import Apkinfo
-from emulator import Emulator
+from apkinfo.apkinfo import Apkinfo
+from emulator.emulator import Emulator
 
 if len(sys.argv) == 2:
     # Start the Emulator

@@ -2,7 +2,7 @@ import os
 import subprocess
 import time
 
-from adb_script import ADB
+from adb_shell.adb import ADB
 
 
 class Emulator:
