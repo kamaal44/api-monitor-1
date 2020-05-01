@@ -20,7 +20,7 @@ class ADB:
 
     def start_apk(self, package_name, main_activity):
         self.package_name = package_name
-        print(f"Start running APK")
+        print("Start running APK")
         command = f"am start -n {package_name}/{main_activity}"
 
         self.device.shell(command)
