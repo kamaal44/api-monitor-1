@@ -18,11 +18,19 @@ pipenv shell
 ## export adb to your work path, and start the adb server.
 
 ```bash=
-source start-emulator.sh
+source environment_shell/start-emulator.sh
 ```
 
+### Init the adb server
+
 ```bash=
-source .bash_profile
+source environment_shell/.bash_profile
+```
+
+### Init the frida server
+
+```bash=
+source environment_shell/start-frida.sh
 ```
 
 Make sure you have already install the Android sdk and the emulator set up.
