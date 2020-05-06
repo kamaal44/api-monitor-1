@@ -1,21 +1,25 @@
 import codecs
 import frida
-import subprocess
 import sys
 import os
 
-
+from apkinfo.apkinfo import Apkinfo
 
 
 def on_message(message, data):
     if message['type'] == 'send':
         print("[*] {}".format(message['payload']))
 
-os.system("adb shell am start -n bmthx.god102409paperi/bmthx.god102409paperi.Begin")
+
+apk_filepath = sys.argv[1]
+apkinfo = Apkinfo(apk_filepath)
+
+
+os.system(f"adb shell am start -n {apkinfo.launch_activity()}")
 
 dev = frida.get_remote_device()
 
-session = dev.attach(sys.argv[1])
+session = dev.attach(apkinfo.package_name)
 
 with codecs.open('frida_scripts/api_monitor.js', 'r', 'utf-8') as f:
     source = f.read()
@@ -31,6 +35,6 @@ print("send back key")
 os.system("adb shell input keyevent 04")
 
 print("restart app")
-os.system("adb shell am start -n bmthx.god102409paperi/bmthx.god102409paperi.Begin")
+os.system(f"adb shell am start -n {apkinfo.launch_activity()}")
 
 sys.stdin.read()

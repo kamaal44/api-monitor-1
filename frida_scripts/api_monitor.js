@@ -524,11 +524,11 @@ function hook(api, callback) {
       // Check if class and method is available
       toHook = Java.use(clazz)[method];
       if (!toHook) {
-        send('[API Monitor] Cannot find ' + clazz + '.' + method);
+        //send('[API Monitor] Cannot find ' + clazz + '.' + method);
         return
       }
     } catch (err) {
-      send('[API Monitor] Cannot find ' + clazz + '.' + method);
+      //send('[API Monitor] Cannot find ' + clazz + '.' + method);
       return
     }
     var arglist = get_implementations(toHook)
@@ -551,7 +551,7 @@ function hook(api, callback) {
       };
     });
   } catch (err) {
-    send('[API Monitor] - ERROR: ' + clazz + "." + method + "[\"Error\"] => " + err);
+    //send('[API Monitor] - ERROR: ' + clazz + "." + method + "[\"Error\"] => " + err);
   }
 }
 

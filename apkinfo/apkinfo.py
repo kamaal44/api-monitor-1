@@ -27,6 +27,9 @@ class Apkinfo:
         for meth in method_analysis:
             yield meth.class_name, meth.name
 
+    def launch_activity(self):
+        return f"{self._packageName}/{self._mainActivity}"
+
 
 if __name__ == '__main__':
     pass
