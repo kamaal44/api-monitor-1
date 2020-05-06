@@ -19,9 +19,9 @@ if len(sys.argv) == 2:
 
     time.sleep(10)
 
-    adb_shell.clean()
+    # adb_shell.clean()
 
-    Emulator.shutdown_emulator()
+    # Emulator.shutdown_emulator()
 
 else:
     print("Usage: python main.py test.apk")
